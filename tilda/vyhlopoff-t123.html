@@ -1,0 +1,900 @@
+<!-- ВЫХЛОПОFF Performance | код для блока T123 (HTML-код) в Tilda
+     Картинки и видео лежат тут: https://valerabkrv.github.io/vyhlopoff/img/
+     Чтобы перенести их в Tilda: загрузите файлы из папки img/ в
+     Настройки сайта -> Файлы и замените в коде все вхождения
+     https://valerabkrv.github.io/vyhlopoff/img/ на адрес, который выдаст Tilda. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090c;
+  --bg-2:#0d1015;
+  --panel:#12161d;
+  --panel-2:#171c25;
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --tx:#eef2f7;
+  --tx-2:#a3adbb;
+  --tx-3:#6e7889;
+  --fire:#ff6a00;
+  --fire-2:#ffb020;
+  --eco:#25e08b;
+  --grad-fire:linear-gradient(135deg,#ff6a00 0%,#ffb020 100%);
+  --grad-eco:linear-gradient(135deg,#12b981 0%,#25e08b 100%);
+  --r-s:12px; --r-m:18px; --r-l:26px; --r-xl:34px;
+  --shadow:0 24px 60px -20px rgba(0,0,0,.8);
+  --glow:0 14px 44px -12px rgba(255,106,0,.55);
+  --maxw:1240px;
+  --pad:clamp(18px,4vw,40px);}
+.vf *, .vf *::before, .vf *::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:17px;line-height:1.6;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;}
+.vf img, .vf video{max-width:100%;display:block}
+.vf a{color:inherit;text-decoration:none}
+.vf button, .vf input, .vf select{font:inherit;color:inherit}
+.vf h1, .vf h2, .vf h3, .vf h4{font-family:'Unbounded',sans-serif;font-weight:700;line-height:1.08;letter-spacing:-.02em;margin:0}
+.vf h1{font-size:clamp(32px,5.6vw,68px)}
+.vf h2{font-size:clamp(27px,3.9vw,50px)}
+.vf h3{font-size:clamp(19px,2vw,25px)}
+.vf p{margin:0}
+.vf .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.vf section{position:relative}
+.vf .sec{padding:clamp(64px,9vw,124px) 0}
+.vf .eyebrow{display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fire-2);margin-bottom:18px;}
+.vf .eyebrow::before{content:"";width:26px;height:2px;background:var(--grad-fire);border-radius:2px}
+.vf .lead{color:var(--tx-2);font-size:clamp(16px,1.5vw,19px);max-width:64ch}
+.vf .gr{background:var(--grad-fire);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vf .gr-eco{background:var(--grad-eco);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vf .btn{--bh:58px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  height:var(--bh);padding:0 30px;border-radius:999px;border:0;cursor:pointer;
+  font-weight:800;font-size:15.5px;letter-spacing:.01em;white-space:nowrap;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s,background .25s,border-color .25s;
+  position:relative;overflow:hidden;}
+.vf .btn:active{transform:scale(.97)}
+.vf .btn-fire{background:var(--grad-fire);color:#12080a;box-shadow:var(--glow)}
+.vf .btn-fire:hover{transform:translateY(-3px);box-shadow:0 22px 54px -12px rgba(255,140,0,.7)}
+.vf .btn-fire::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%);
+  transform:translateX(-130%);}
+.vf .btn-fire:hover::after{transform:translateX(130%);transition:transform .8s ease}
+.vf .btn-ghost{background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--tx);backdrop-filter:blur(10px)}
+.vf .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px);border-color:rgba(255,176,32,.5)}
+.vf .btn-sm{--bh:46px;padding:0 22px;font-size:14px}
+.vf .btn-wide{width:100%}
+.vf .hdr{position:fixed;inset:0 0 auto 0;z-index:90;
+  transition:background .35s,box-shadow .35s,border-color .35s,backdrop-filter .35s;
+  border-bottom:1px solid transparent;}
+.vf .hdr.stuck{background:rgba(8,9,12,.82);backdrop-filter:blur(18px) saturate(160%);border-bottom-color:var(--line);box-shadow:0 10px 40px -24px #000}
+.vf .hdr-in{display:flex;align-items:center;gap:22px;height:78px}
+.vf .logo{display:flex;align-items:center;flex:none}
+.vf .logo img{height:34px;width:auto;display:block;transition:opacity .25s,filter .25s}
+.vf .logo:hover img{filter:drop-shadow(0 6px 20px rgba(255,106,0,.45))}
+.vf .logo-mob img{height:36px}
+.vf .logo-ftr img{height:40px}
+.vf .nav{display:flex;gap:4px;margin-left:auto}
+.vf .nav a{padding:9px 15px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--tx-2);
+  white-space:nowrap;transition:color .2s,background .2s;}
+.vf .nav a:hover{color:var(--tx);background:rgba(255,255,255,.07)}
+.vf .hdr-cta{display:flex;align-items:center;gap:14px}
+.vf .hdr-tel{font-family:'Unbounded';font-weight:600;font-size:15.5px;letter-spacing:-.02em;white-space:nowrap}
+.vf .hdr-tel small{display:block;font-family:'Manrope';font-weight:600;font-size:11px;color:var(--eco);letter-spacing:.04em}
+.vf .burger{display:none;width:46px;height:46px;border-radius:13px;border:1px solid var(--line-2);background:rgba(255,255,255,.05);align-items:center;justify-content:center;cursor:pointer;margin-left:auto}
+.vf .burger span{display:block;width:19px;height:2px;background:var(--tx);border-radius:2px;position:relative}
+.vf .burger span::before, .vf .burger span::after{content:"";position:absolute;left:0;width:19px;height:2px;background:var(--tx);border-radius:2px;transition:.3s}
+.vf .burger span::before{top:-6px}
+.vf .burger span::after{top:6px}
+.vf .mob{position:fixed;inset:0;z-index:95;background:rgba(8,9,12,.97);backdrop-filter:blur(20px);display:none;flex-direction:column;padding:22px var(--pad) 40px}
+.vf .mob.open{display:flex}
+.vf .mob-top{display:flex;width:100%;justify-content:space-between;align-items:center;height:56px}
+.vf .mob nav{display:flex;flex-direction:column;gap:2px;margin-top:26px}
+.vf .mob nav a{font-family:'Unbounded';font-size:23px;font-weight:600;padding:14px 0;border-bottom:1px solid var(--line)}
+.vf .mob .btn{margin-top:26px}
+.vf .x{width:46px;height:46px;border-radius:13px;border:1px solid var(--line-2);background:none;font-size:22px;cursor:pointer;line-height:1}
+.vf .hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 60px;overflow:hidden}
+.vf .hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;background:#000}
+.vf .hero-bg video, .vf .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.36;transform:scale(1.12);filter:blur(5px) saturate(1.2) contrast(1.05)}
+.vf .hero-bg::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 12% 22%,rgba(8,9,12,.94) 0%,rgba(8,9,12,.72) 42%,rgba(8,9,12,.25) 72%),
+    linear-gradient(to top,var(--bg) 2%,rgba(8,9,12,.35) 48%,rgba(8,9,12,.7) 100%);}
+.vf .hero-glow{position:absolute;z-index:-1;width:60vw;height:60vw;max-width:760px;max-height:760px;border-radius:50%;filter:blur(120px);opacity:.28;pointer-events:none}
+.vf .hero-glow.g1{background:#ff6a00;top:-16%;right:-10%}
+.vf .hero-glow.g2{background:#12b981;bottom:-24%;left:-14%;opacity:.16}
+.vf .hero-in{max-width:900px}
+.vf .pill{display:inline-flex;align-items:center;gap:9px;padding:9px 17px 9px 11px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line-2);backdrop-filter:blur(12px);
+  font-size:13.5px;font-weight:700;color:var(--tx-2);margin-bottom:26px;}
+.vf .dot{width:8px;height:8px;border-radius:50%;background:var(--eco);box-shadow:0 0 0 0 rgba(37,224,139,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 11px rgba(37,224,139,0)}100%{box-shadow:0 0 0 0 rgba(37,224,139,0)}}
+.vf .hero h1{margin-bottom:22px}
+.vf .hero h1 em{font-style:normal;display:inline-block}
+.vf .hero-sub{font-size:clamp(16px,1.7vw,20px);color:#cfd7e2;max-width:60ch;margin-bottom:12px}
+.vf .hero-note{font-size:14.5px;color:var(--tx-3);margin-bottom:32px}
+.vf .hero-btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.vf .hero-tel{display:flex;flex-direction:column;gap:1px;padding-left:8px}
+.vf .hero-tel span{font-size:12px;color:var(--tx-3);font-weight:600}
+.vf .hero-tel a{font-family:'Unbounded';font-size:19px;font-weight:600;letter-spacing:-.02em}
+.vf .hero-tel a:hover{color:var(--fire-2)}
+.vf .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:clamp(44px,6vw,74px);background:var(--line);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;backdrop-filter:blur(14px)}
+.vf .stat{background:rgba(15,18,24,.72);padding:26px 22px}
+.vf .stat b{display:block;font-family:'Unbounded';font-size:clamp(26px,3.4vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.vf .stat span{display:block;margin-top:8px;font-size:13.5px;color:var(--tx-2);font-weight:600}
+.vf .mq{border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(255,106,0,.12),rgba(37,224,139,.08),rgba(255,106,0,.12));overflow:hidden;padding:16px 0}
+.vf .mq-track{display:flex;gap:36px;width:max-content;animation:slide 32s linear infinite}
+.vf .mq-track span{font-family:'Unbounded';font-size:15px;font-weight:600;color:var(--tx-2);display:flex;align-items:center;gap:36px;white-space:nowrap}
+.vf .mq-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--fire)}
+@keyframes slide{to{transform:translateX(-50%)}}
+.vf .pain-card{position:relative;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--line);background:linear-gradient(140deg,rgba(255,106,0,.14),rgba(18,22,29,.6) 46%);
+  padding:clamp(30px,5vw,64px);}
+.vf .pain-card::before{content:"";position:absolute;top:-40%;right:-6%;width:420px;height:420px;background:#ff6a00;filter:blur(130px);opacity:.2;pointer-events:none}
+.vf .pain-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(26px,4vw,56px);align-items:center;position:relative}
+.vf .pain h2{margin-bottom:18px}
+.vf .eco-badge{display:inline-flex;flex-direction:column;gap:4px;padding:22px 30px;border-radius:var(--r-l);
+  background:rgba(8,9,12,.6);border:1px solid rgba(255,176,32,.35);backdrop-filter:blur(10px);}
+.vf .eco-badge small{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);font-weight:800}
+.vf .eco-badge b{font-family:'Unbounded';font-size:clamp(22px,2.6vw,32px);letter-spacing:-.02em}
+.vf .calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,34px);align-items:stretch}
+.vf .card{background:linear-gradient(180deg,var(--panel) 0%,var(--bg-2) 100%);
+  border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(24px,3.4vw,40px);}
+.vf .field{margin-bottom:22px}
+.vf .field:last-child{margin-bottom:0}
+.vf .field label{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;font-weight:700;color:var(--tx-2);margin-bottom:12px}
+.vf .field label b{font-family:'Unbounded';font-size:19px;color:var(--tx);font-weight:600}
+.vf input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;
+  background:rgba(255,255,255,.1);outline:none;}
+.vf input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--grad-fire);cursor:grab;box-shadow:0 4px 14px rgba(255,106,0,.6),0 0 0 4px rgba(255,106,0,.16);}
+.vf input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radius:50%;background:#ff8a00;cursor:grab}
+.vf .calc-out{background:
+    radial-gradient(120% 100% at 100% 0%,rgba(37,224,139,.2),transparent 58%),
+    linear-gradient(180deg,var(--panel-2),var(--bg-2));
+  border:1px solid rgba(37,224,139,.28);display:flex;flex-direction:column;justify-content:center;gap:6px;}
+.vf .calc-out .big{font-family:'Unbounded';font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.vf .calc-out .cap{font-size:14px;color:var(--tx-2);font-weight:700;letter-spacing:.02em}
+.vf .calc-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 26px}
+.vf .calc-split div{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--r-m);padding:16px 18px}
+.vf .calc-split b{display:block;font-family:'Unbounded';font-size:22px;letter-spacing:-.02em}
+.vf .calc-split span{font-size:12.5px;color:var(--tx-3);font-weight:700}
+.vf .disclaimer{font-size:12.5px;color:var(--tx-3);margin-top:16px;line-height:1.5}
+.vf .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4.5vw,70px);align-items:center}
+.vf .media{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.vf .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .9s cubic-bezier(.2,.8,.3,1)}
+.vf .srv-img.fit{background:#0a0c10}
+.vf .srv-img.fit img{object-fit:contain;padding:6px}
+.vf .srv-img.fit::after{background:linear-gradient(to top,var(--panel) 2%,transparent 34%)}
+.vf .media:hover img{transform:scale(1.06)}
+.vf .media-tag{position:absolute;left:18px;bottom:18px;padding:11px 18px;border-radius:999px;
+  background:rgba(8,9,12,.72);border:1px solid var(--line-2);backdrop-filter:blur(12px);
+  font-size:13px;font-weight:800;letter-spacing:.02em;}
+.vf .chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.vf .chip{padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--tx-2)}
+.vf .chip.eco{border-color:rgba(37,224,139,.35);color:var(--eco);background:rgba(37,224,139,.08)}
+.vf .why-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(14px,1.6vw,20px)}
+.vf .why-card{grid-column:span 2;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-l);
+  padding:clamp(24px,2.6vw,34px);position:relative;overflow:hidden;
+  transition:transform .35s,border-color .35s,background .35s;}
+.vf .why-card:nth-child(4), .vf .why-card:nth-child(5){grid-column:span 3}
+.vf .why-card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .35s;
+  background:radial-gradient(90% 80% at 0% 0%,rgba(255,106,0,.16),transparent 62%);}
+.vf .why-card:hover{transform:translateY(-6px);border-color:rgba(255,176,32,.35)}
+.vf .why-card:hover::before{opacity:1}
+.vf .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:20px;
+  background:rgba(255,106,0,.13);border:1px solid rgba(255,176,32,.28);position:relative;}
+.vf .ic svg{width:24px;height:24px;stroke:var(--fire-2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.vf .why-card h3{margin-bottom:11px;font-size:clamp(17px,1.6vw,20px)}
+.vf .why-card p{color:var(--tx-2);font-size:15px;position:relative}
+.vf .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,20px);counter-reset:s}
+.vf .step{position:relative;padding:clamp(24px,2.6vw,32px);border-radius:var(--r-l);
+  background:linear-gradient(180deg,var(--panel),rgba(13,16,21,.6));border:1px solid var(--line);
+  transition:transform .35s,border-color .35s;}
+.vf .step:hover{transform:translateY(-6px);border-color:rgba(255,176,32,.35)}
+.vf .step-n{font-family:'Unbounded';font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--fire-2);
+  display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.vf .step-n i{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,176,32,.5),transparent);font-style:normal}
+.vf .step h3{font-size:clamp(16.5px,1.5vw,19px);margin-bottom:11px}
+.vf .step p{color:var(--tx-2);font-size:14.5px}
+.vf .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,24px)}
+.vf .srv{display:flex;flex-direction:column;border-radius:var(--r-l);overflow:hidden;
+  background:var(--panel);border:1px solid var(--line);
+  transition:transform .4s cubic-bezier(.2,.8,.3,1),border-color .4s,box-shadow .4s;}
+.vf .srv:hover{transform:translateY(-8px);border-color:rgba(255,176,32,.4);box-shadow:0 30px 60px -30px rgba(255,106,0,.5)}
+.vf .srv-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.vf .srv-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.3,1)}
+.vf .srv:hover .srv-img img{transform:scale(1.08)}
+.vf .srv-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--panel) 4%,transparent 60%)}
+.vf .srv-body{padding:clamp(20px,2.2vw,28px);display:flex;flex-direction:column;flex:1;gap:16px}
+.vf .srv h3{font-size:clamp(17px,1.6vw,20.5px)}
+.vf .srv ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.vf .srv li{display:flex;gap:11px;font-size:14.5px;color:var(--tx-2);line-height:1.45}
+.vf .srv li i{flex:none;font-style:normal;font-size:15px;line-height:1.35}
+.vf .srv .btn{margin-top:auto}
+.vf .srv-note{font-size:13.5px;font-weight:800;color:var(--fire-2);letter-spacing:.01em}
+.vf .faq{max-width:900px;margin:0 auto}
+.vf .q{border:1px solid var(--line);border-radius:var(--r-m);background:var(--panel);margin-bottom:12px;overflow:hidden;transition:border-color .3s,background .3s}
+.vf .q[open]{border-color:rgba(255,176,32,.4);background:linear-gradient(180deg,rgba(255,106,0,.07),var(--panel))}
+.vf .q summary{list-style:none;cursor:pointer;padding:22px clamp(20px,2.4vw,30px);
+  display:flex;align-items:center;gap:18px;font-weight:800;font-size:clamp(16px,1.6vw,18.5px);}
+.vf .q summary::-webkit-details-marker{display:none}
+.vf .q summary::after{content:"";flex:none;margin-left:auto;width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--line-2);background:
+    linear-gradient(var(--tx),var(--tx)) center/11px 1.6px no-repeat,
+    linear-gradient(var(--tx),var(--tx)) center/1.6px 11px no-repeat;
+  transition:transform .35s,border-color .3s;}
+.vf .q[open] summary::after{transform:rotate(135deg);border-color:var(--fire-2)}
+.vf .q .a{padding:0 clamp(20px,2.4vw,30px) 24px;color:var(--tx-2);font-size:15.5px;max-width:78ch}
+.vf .contacts{border-radius:var(--r-xl);border:1px solid var(--line);overflow:hidden;
+  background:radial-gradient(110% 120% at 100% 0%,rgba(255,106,0,.16),transparent 55%),linear-gradient(180deg,var(--panel),var(--bg-2));}
+.vf .contacts-grid{display:grid;grid-template-columns:1.05fr .95fr}
+.vf .contacts-l{padding:clamp(28px,4vw,56px);border-right:1px solid var(--line)}
+.vf .contacts-r{padding:clamp(28px,4vw,56px)}
+.vf .cities{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.vf .cities li a{display:flex;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid var(--line);
+  transition:padding-left .3s,color .3s;}
+.vf .cities li a:hover{padding-left:12px;color:var(--fire-2)}
+.vf .cities .pin{width:34px;height:34px;flex:none;border-radius:11px;background:rgba(255,106,0,.13);border:1px solid rgba(255,176,32,.25);display:grid;place-items:center}
+.vf .cities .pin svg{width:16px;height:16px;stroke:var(--fire-2);fill:none;stroke-width:1.8}
+.vf .cities b{font-family:'Unbounded';font-weight:600;font-size:15.5px;letter-spacing:-.01em;display:block}
+.vf .cities span{font-size:13.5px;color:var(--tx-2);font-weight:600}
+.vf .tel-big{display:inline-flex;flex-direction:column;gap:2px;margin-top:8px}
+.vf .tel-big span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);font-weight:800}
+.vf .tel-big a{font-family:'Unbounded';font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.03em}
+.vf .tel-big a:hover{color:var(--fire-2)}
+.vf .mail{margin-top:18px;font-size:15px;color:var(--tx-2)}
+.vf .mail a{border-bottom:1px solid var(--line-2)}
+.vf .inp{width:100%;height:56px;border-radius:15px;background:rgba(255,255,255,.05);
+  border:1px solid var(--line-2);padding:0 18px;font-size:16px;transition:border-color .25s,background .25s;}
+.vf .inp::placeholder{color:var(--tx-3)}
+.vf .inp:focus{outline:none;border-color:var(--fire-2);background:rgba(255,255,255,.08)}
+.vf .form-row{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.vf .consent{font-size:12.5px;color:var(--tx-3);margin-top:14px;line-height:1.5}
+.vf .ok{display:none;padding:18px;border-radius:var(--r-m);background:rgba(37,224,139,.1);border:1px solid rgba(37,224,139,.35);color:var(--eco);font-weight:700;font-size:15px;margin-top:16px}
+.vf .ok.show{display:block}
+.vf .ftr{border-top:1px solid var(--line);padding:44px 0 120px;background:var(--bg-2)}
+.vf .ftr-in{display:flex;flex-wrap:wrap;gap:20px 34px;align-items:center;justify-content:space-between}
+.vf .ftr-nav{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--tx-2)}
+.vf .ftr-nav a:hover{color:var(--fire-2)}
+.vf .copy{font-size:14px;color:var(--tx-3)}
+.vf .up{position:fixed;right:20px;bottom:96px;width:50px;height:50px;border-radius:50%;z-index:70;
+  background:rgba(18,22,29,.85);border:1px solid var(--line-2);backdrop-filter:blur(12px);
+  display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;}
+.vf .up.show{opacity:1;pointer-events:auto}
+.vf .up:hover{transform:translateY(-4px);border-color:var(--fire-2)}
+.vf .up svg{width:19px;height:19px;stroke:var(--tx);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vf .bar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;gap:10px;
+  padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
+  background:rgba(8,9,12,.9);backdrop-filter:blur(18px);border-top:1px solid var(--line);
+  transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.3,1);}
+.vf .bar.show{transform:none}
+.vf .bar .btn{flex:1}
+.vf .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.vf .modal.open{display:flex}
+.vf .modal-bd{position:absolute;inset:0;background:rgba(4,5,7,.82);backdrop-filter:blur(8px)}
+.vf .modal-in{position:relative;width:min(520px,100%);max-height:92svh;overflow:auto;
+  background:linear-gradient(180deg,var(--panel-2),var(--bg-2));border:1px solid var(--line-2);
+  border-radius:var(--r-xl);padding:clamp(26px,4vw,40px);box-shadow:var(--shadow);
+  animation:pop .4s cubic-bezier(.2,.9,.3,1);}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.vf .modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:none;cursor:pointer;font-size:19px}
+.vf .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.3,1),transform .8s cubic-bezier(.2,.8,.3,1)}
+.vf .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+.vf .rv{opacity:1;transform:none;transition:none}
+.vf .mq-track{animation:none}
+.vf *{scroll-behavior:auto!important}
+}
+@media (max-width:1340px){
+.vf .hdr-in{gap:12px}
+.vf .logo img{height:31px}
+.vf .nav a{padding:8px 10px;font-size:13.5px}
+.vf .hdr-tel{font-size:14.5px}
+.vf .hdr-cta{gap:10px}
+}
+@media (max-width:1180px){
+.vf .nav a{padding:7px 7px;font-size:12.5px}
+.vf .logo img{height:29px}
+.vf .hdr-tel small{display:none}
+}
+@media (min-width:1141px){
+.vf .bar{display:none}
+}
+@media (max-width:1140px){
+.vf .nav, .vf .hdr-cta .btn{display:none}
+.vf .burger{display:flex}
+.vf .hdr-cta{display:none}
+.vf .why-grid{grid-template-columns:repeat(2,1fr)}
+.vf .why-card, .vf .why-card:nth-child(4), .vf .why-card:nth-child(5){grid-column:span 1}
+.vf .why-card:nth-child(5){grid-column:span 2}
+.vf .steps{grid-template-columns:repeat(2,1fr)}
+.vf .srv-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+.vf .stats{grid-template-columns:repeat(2,1fr)}
+.vf .calc, .vf .split, .vf .pain-grid, .vf .contacts-grid{grid-template-columns:1fr}
+.vf .contacts-l{border-right:0;border-bottom:1px solid var(--line)}
+.vf .split .media{order:-1}
+}
+@media (max-width:640px){
+body{font-size:16px}
+.vf .why-grid, .vf .steps, .vf .srv-grid{grid-template-columns:1fr}
+.vf .why-card:nth-child(5){grid-column:span 1}
+.vf .hero{min-height:auto;padding:112px 0 48px}
+.vf .hero-btns{flex-direction:column;align-items:stretch}
+.vf .hero-btns .btn{width:100%}
+.vf .hero-tel{padding:6px 0 0;align-items:center}
+.vf .calc-split{grid-template-columns:1fr}
+.vf .up{display:none}
+.vf .logo img{height:27px}
+.vf .logo-mob img{height:25px}
+.vf .logo-ftr img{height:32px}
+.vf .mob-top{gap:12px}
+}
+@media (max-width:390px){
+.vf .logo img{height:23px}
+.vf .logo-mob img{height:22px}
+.vf .burger, .vf .x{width:42px;height:42px}
+}
+
+</style>
+<div class="vf">
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#top" class="logo" aria-label="ВЫХЛОПОFF PERFORMANCE — на главную">
+      <img src="https://valerabkrv.github.io/vyhlopoff/img/logo-light.png" alt="ВЫХЛОПОFF PERFORMANCE" width="1538" height="172">
+    </a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#calc">Экономия</a>
+      <a href="#about">Прошивка</a>
+      <a href="#why">Почему мы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="hdr-tel" href="tel:+79226969219">+7 (922) 696-92-19<small>Ответим за 5 минут</small></a>
+      <button class="btn btn-fire btn-sm" data-modal>Записаться</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+
+<div class="mob" id="mob">
+  <div class="wrap mob-top" style="padding:0">
+    <a href="#top" class="logo logo-mob"><img src="https://valerabkrv.github.io/vyhlopoff/img/logo-light.png" alt="ВЫХЛОПОFF PERFORMANCE" width="1538" height="172"></a>
+    <button class="x" id="mobX" aria-label="Закрыть">✕</button>
+  </div>
+  <nav>
+    <a href="#services">Услуги сервиса</a>
+    <a href="#calc">Калькулятор экономии</a>
+    <a href="#about">Прошивка</a>
+    <a href="#why">Почему мы</a>
+    <a href="#steps">Как проходит</a>
+    <a href="#faq">Честные ответы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn btn-fire btn-wide" href="tel:+79226969219">Позвонить +7 (922) 696-92-19</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="metadata" poster="https://valerabkrv.github.io/vyhlopoff/img/drossel.jpg">
+      <source src="https://valerabkrv.github.io/vyhlopoff/img/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <span class="hero-glow g1"></span><span class="hero-glow g2"></span>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="pill"><span class="dot"></span>Чип-тюнинг для экономии бензина · 5 городов</span>
+      <h1>Прошивка, которая <em class="gr">окупается бензином</em></h1>
+      <p class="hero-sub">Профессиональная прошивка ЭБУ для снижения расхода топлива на легковых бензиновых автомобилях. Услуга, которая окупается бензином.</p>
+      <p class="hero-note">Где бензин: актуальные цены на топливо и поиск ближайших АЗС</p>
+      <div class="hero-btns">
+        <button class="btn btn-fire" data-modal>Записаться / Рассчитать стоимость</button>
+        <a class="btn btn-ghost" href="#calc">Посчитать экономию</a>
+        <span class="hero-tel"><span>Телефон для записи</span><a href="tel:+79226969219">+7 (922) 696-92-19</a></span>
+      </div>
+      <div class="stats">
+        <div class="stat"><b class="gr-eco"><span data-count="40" data-suffix="%">0%</span></b><span>снижение расхода до</span></div>
+        <div class="stat"><b><span data-count="2" data-prefix="1–">1–2</span></b><span>часа работы</span></div>
+        <div class="stat"><b><span data-count="5">0</span></b><span>городов присутствия</span></div>
+        <div class="stat"><b>OBD2</b><span>без пайки и снятия ЭБУ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <span>Реальная экономия</span><span>Индивидуальные калибровки</span><span>Заводская надёжность</span><span>Диагностика до прошивки</span><span>Без пайки и снятия блоков</span>
+    <span>Реальная экономия</span><span>Индивидуальные калибровки</span><span>Заводская надёжность</span><span>Диагностика до прошивки</span><span>Без пайки и снятия блоков</span>
+  </div>
+</div>
+
+<!-- ================= PAIN ================= -->
+<section class="sec pain">
+  <div class="wrap">
+    <div class="pain-card rv">
+      <div class="pain-grid">
+        <div>
+          <span class="eyebrow">Знакомо?</span>
+          <h2>Надоело искать где бензин? Устали стоять в очередях на АЗС чтобы заправить авто.</h2>
+          <p class="lead" style="margin-top:18px">Мы делаем ЗАПРАВКУ бензином реже. Специализируемся только на экономичных прошивках бензиновых двигателей. Не гонимся за мощностью — оптимизируем каждый миллилитр топлива без вреда для мотора.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+            <button class="btn btn-fire" data-modal>Узнать как</button>
+            <a class="btn btn-ghost" href="#services">Наши дополнительные услуги</a>
+          </div>
+        </div>
+        <div class="eco-badge">
+          <small>Приезжайте к нам на услугу</small>
+          <b class="gr">«ЭКО ЧИП ТЮНИНГ»</b>
+          <span style="font-size:14px;color:var(--tx-2);font-weight:600;margin-top:6px">Снижение расхода на 15–40% в спокойном режиме эксплуатации</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec" id="services" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div style="margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">Услуги сервиса</span>
+      <h2>Наши <span class="gr">дополнительные услуги</span></h2>
+      <p class="lead" style="margin-top:16px">Всё, что влияет на расход и здоровье мотора — в одном сервисе. Диагностика, ремонт и обслуживание топливной системы.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px">
+        <button class="btn btn-fire" data-modal>Записаться на сервис</button>
+        <a class="btn btn-ghost" href="#about">Главная услуга — прошивка ЭБУ</a>
+      </div>
+    </div>
+    <div class="srv-grid">
+
+      <article class="srv rv">
+        <div class="srv-img"><img src="https://valerabkrv.github.io/vyhlopoff/img/forsunki.jpg" alt="Стенд для промывки и проверки топливных форсунок" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Ремонт и промывка форсунок</h3>
+          <ul>
+            <li><i>✅</i>Без снятия — за 40 минут</li>
+            <li><i>✅</i>Со снятием — с проверкой на стенде</li>
+            <li><i>✅</i>Устранение провалов и перерасхода</li>
+          </ul>
+          <p class="srv-note">💨 Машина снова поедет!</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Ремонт и промывка форсунок">записаться</button>
+        </div>
+      </article>
+
+      <article class="srv rv">
+        <div class="srv-img fit"><img src="https://valerabkrv.github.io/vyhlopoff/img/toplivnaya.jpg" alt="Система подачи топлива: бак, бензонасос, топливный фильтр, регулятор давления, форсунки" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Ремонт топливной аппаратуры</h3>
+          <ul>
+            <li><i>🔧</i>Ремонт системы подачи топлива</li>
+            <li><i>✅</i>Устраним: перерасход, провалы, троение</li>
+            <li><i>✅</i>Вернём мощность и ровный холостой ход</li>
+          </ul>
+          <p class="srv-note">⚡ Быстро. Честно. С гарантией</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Ремонт топливной аппаратуры">записаться</button>
+        </div>
+      </article>
+
+      <article class="srv rv">
+        <div class="srv-img"><img src="https://valerabkrv.github.io/vyhlopoff/img/svechi.jpg" alt="Замена свечей зажигания с проверкой зазора" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Замена свечей с проверкой зазора</h3>
+          <ul>
+            <li><i>🔧</i>Замена свечей зажигания</li>
+            <li><i>✅</i>Ровный запуск, стабильный холостой ход</li>
+            <li><i>✅</i>Ниже расход, лучше динамика</li>
+          </ul>
+          <p class="srv-note">⚡ Быстро, с правильным моментом затяжки</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена свечей с проверкой зазора">записаться</button>
+        </div>
+      </article>
+
+      <article class="srv rv">
+        <div class="srv-img"><img src="https://valerabkrv.github.io/vyhlopoff/img/drossel-clean.jpg" alt="Чистка дроссельной заслонки" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Чистка дроссельной заслонки</h3>
+          <ul>
+            <li><i>✅</i>Уберём плавающие обороты и рывки</li>
+            <li><i>✅</i>Вернём отзывчивость педали газа</li>
+          </ul>
+          <p class="srv-note">⚡ Быстро, с адаптацией после чистки</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Чистка дроссельной заслонки">записаться</button>
+        </div>
+      </article>
+
+      <article class="srv rv">
+        <div class="srv-img"><img src="https://valerabkrv.github.io/vyhlopoff/img/katalizator.jpg" alt="Каталитический нейтрализатор — замена катализатора" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Замена катализатора</h3>
+          <ul>
+            <li><i>✅</i>Оригинал или универсальный — подберём</li>
+            <li><i>✅</i>Уберём ошибки Check Engine и вернём тягу</li>
+          </ul>
+          <p class="srv-note">⚡ Быстро, с гарантией</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена катализатора">записаться</button>
+        </div>
+      </article>
+
+      <article class="srv rv">
+        <div class="srv-img"><img src="https://valerabkrv.github.io/vyhlopoff/img/maslo.jpg" alt="Замена моторного масла" loading="lazy"></div>
+        <div class="srv-body">
+          <h3>🔧 Замена масла</h3>
+          <ul>
+            <li><i>✅</i>Подбор по допускам</li>
+            <li><i>✅</i>Масло + фильтр + работа</li>
+          </ul>
+          <p class="srv-note">⚡ Сбросим сервисный интервал</p>
+          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена масла">записаться</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALC ================= -->
+<section class="sec" id="calc">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">Калькулятор</span>
+      <h2>Сколько бензина вы сожжёте <span class="gr">зря</span> за год</h2>
+      <p class="lead" style="margin:16px auto 0">Подвиньте ползунки под свой автомобиль — и увидите, сколько денег остаётся в баке после прошивки.</p>
+    </div>
+    <div class="calc rv">
+      <div class="card">
+        <div class="field">
+          <label>Расход сейчас, л / 100 км <b><span id="v1">11</span> л</b></label>
+          <input type="range" id="r1" min="5" max="25" step="0.5" value="11">
+        </div>
+        <div class="field">
+          <label>Пробег в месяц, км <b><span id="v2">1500</span> км</b></label>
+          <input type="range" id="r2" min="200" max="6000" step="100" value="1500">
+        </div>
+        <div class="field">
+          <label>Цена литра, ₽ <b><span id="v3">62</span> ₽</b></label>
+          <input type="range" id="r3" min="40" max="110" step="1" value="62">
+        </div>
+        <div class="field">
+          <label>Ожидаемая экономия после прошивки <b><span id="v4">20</span> %</b></label>
+          <input type="range" id="r4" min="15" max="40" step="1" value="20">
+        </div>
+      </div>
+      <div class="card calc-out">
+        <span class="cap">Вы экономите за год</span>
+        <span class="big gr-eco" id="oYear">0 ₽</span>
+        <div class="calc-split">
+          <div><b id="oMonth">0 ₽</b><span>В МЕСЯЦ</span></div>
+          <div><b id="oLit">0 л</b><span>БЕНЗИНА В ГОД</span></div>
+        </div>
+        <button class="btn btn-fire btn-wide" data-modal>Записаться / Рассчитать стоимость</button>
+        <p class="disclaimer">Расчёт ориентировочный. Снижение расхода на 15–40% — это результат оптимизации топливовоздушной смеси и углов опережения зажигания. Экономия напрямую зависит от манеры вождения и состояния технической части автомобиля.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Основная услуга</span>
+        <h2>Прошиваем <span class="gr">для экономии</span></h2>
+        <p class="lead" style="margin-top:20px">Данная услуга включает снижение расхода топлива в смешанном цикле и улучшение эластичности двигателя. Мы выполняем безопасные калибровки под конкретный автомобиль с сохранением стоковой прошивки. Процесс занимает от 1 до 2 часов и подходит для бензиновых атмосферных и турбированных двигателей.</p>
+        <div class="chips">
+          <span class="chip eco">Сохраняем сток</span>
+          <span class="chip">Атмосферные</span>
+          <span class="chip">Турбированные</span>
+          <span class="chip">1–2 часа</span>
+          <span class="chip">Смешанный цикл</span>
+        </div>
+        <button class="btn btn-fire" data-modal>Записаться / Рассчитать стоимость</button>
+      </div>
+      <div class="media rv">
+        <img src="https://valerabkrv.github.io/vyhlopoff/img/drossel.jpg" alt="Дроссельный узел бензинового двигателя крупным планом" loading="lazy">
+        <span class="media-tag">Оптимизируем каждый миллилитр топлива</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="sec" id="why" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div style="margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">Почему выбирают нас</span>
+      <h2>5 причин доверить <span class="gr">мотор нам</span></h2>
+    </div>
+    <div class="why-grid">
+      <article class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Реальная экономия</h3>
+        <p>Вы заметите значительное снижение затрат на топливо, что подтверждается цифрами с чеков АЗС.</p>
+      </article>
+      <article class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+        <h3>Индивидуальные калибровки</h3>
+        <p>Наши специалисты настраивают параметры прошивки под особенности вашего автомобиля для достижения максимальной эффективности.</p>
+      </article>
+      <article class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Заводская надёжность</h3>
+        <p>Все изменения вносятся строго в пределах допустимых заводских норм, что гарантирует безопасность двигателя.</p>
+      </article>
+      <article class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h3>Диагностика до прошивки</h3>
+        <p>Перед началом работ мы проводим полную проверку систем автомобиля, чтобы убедиться в отсутствии скрытых неисправностей.</p>
+      </article>
+      <article class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M7 11v2M11 11v2M15 11v2M19 11v2"/></svg></div>
+        <h3>Без пайки и снятия блоков</h3>
+        <p>Работа выполняется бережно через стандартный разъем OBD2, без физического вмешательства в электронные блоки управления.</p>
+      </article>
+    </div>
+    <div style="margin-top:34px" class="rv"><button class="btn btn-ghost" data-modal>Узнать подробнее</button></div>
+  </div>
+</section>
+
+<!-- ================= STEPS ================= -->
+<section class="sec" id="steps">
+  <div class="wrap">
+    <div style="margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">Как проходит</span>
+      <h2>4 шага <span class="gr">к экономии</span></h2>
+      <p class="lead" style="margin-top:16px">Диагностика и замер расхода, считывание заводской программы, адаптация калибровок под экономию, прошивка и тест-драйв.</p>
+    </div>
+    <div class="steps">
+      <article class="step rv"><div class="step-n">ШАГ 01<i></i></div><h3>Диагностика и замер расхода</h3><p>Проводим комплексную проверку технического состояния двигателя и фиксируем исходные показатели потребления топлива.</p></article>
+      <article class="step rv"><div class="step-n">ШАГ 02<i></i></div><h3>Считывание заводской программы</h3><p>Бережно извлекаем оригинальное программное обеспечение из электронного блока управления для дальнейшей работы.</p></article>
+      <article class="step rv"><div class="step-n">ШАГ 03<i></i></div><h3>Адаптация калибровок под экономию</h3><p>Корректируем параметры работы двигателя для оптимизации процессов сгорания топлива, добиваясь снижения расхода на 15 - 40%.</p></article>
+      <article class="step rv"><div class="step-n">ШАГ 04<i></i></div><h3>Прошивка и тест-драйв</h3><p>Записываем калибровку через разъём OBD2 и проверяем результат на дороге — отклик педали, ровный холостой ход и новый расход.</p></article>
+    </div>
+    <div style="margin-top:34px" class="rv"><button class="btn btn-fire" data-modal>записаться</button></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">FAQ</span>
+      <h2>Честные <span class="gr">ответы</span></h2>
+    </div>
+    <div class="faq">
+      <details class="q rv"><summary>Вредит ли чип-тюнинг двигателю?</summary><div class="a">Наша прошивка «Эконом Stage 1» оптимизирует работу ЭБУ без изменения конструктивных параметров двигателя. Мы работаем только с программной частью, сохраняя заводские допуски по нагрузке, что гарантирует безопасность для ресурса вашего мотора.</div></details>
+      <details class="q rv"><summary>Реальна ли экономия топлива на 40%?</summary><div class="a">Снижение расхода на 15–40% — это результат оптимизации топливовоздушной смеси и углов опережения зажигания. Экономия напрямую зависит от манеры вождения и состояния технической части автомобиля, но в спокойном режиме эксплуатации показатели достигают заявленных значений.</div></details>
+      <details class="q rv"><summary>Сохраняется ли заводская гарантия дилера?</summary><div class="a">Программное обеспечение «ВЫХЛОПОФ» не меняет контрольные суммы ЭБУ, которые считываются при стандартной диагностике. Мы используем индивидуальные калибровки, которые остаются незаметными для дилерского оборудования.</div></details>
+      <details class="q rv"><summary>Станет ли машина «тупой» после прошивки?</summary><div class="a">Цель нашей прошивки — экономия топлива, однако за счет оптимизации работы двигателя часто улучшается отклик на педаль газа и эластичность мотора на низких оборотах. Автомобиль не теряет в динамике, а становится более отзывчивым.</div></details>
+      <details class="q rv"><summary>Сколько стоит услуга?</summary><div class="a">Стоимость рассчитывается индивидуально в зависимости от марки и модели вашего автомобиля. Учитывая снижение расхода топлива, прошивка окупается в кратчайшие сроки за счет экономии на каждой поездке.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTS ================= -->
+<section class="sec" id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="contacts rv">
+      <div class="contacts-grid">
+        <div class="contacts-l">
+          <span class="eyebrow">Контакты, адреса</span>
+          <h2>Начните экономить <span class="gr">уже сегодня</span></h2>
+          <p class="lead" style="margin-top:18px">Свяжитесь с нами, чтобы проконсультироваться по чип-тюнингу вашего автомобиля. Мы ответим на все вопросы и поможем подобрать оптимальную прошивку для снижения расхода топлива.</p>
+          <span class="tel-big"><span>Телефон для записи</span><a href="tel:+79226969219">+7 (922) 696-92-19</a></span>
+          <p class="mail">Почта: <a href="mailto:exhaustofff@yandex.ru">exhaustofff@yandex.ru</a></p>
+          <ul class="cities">
+            <li><a href="https://yandex.ru/maps/?text=Челябинск%20ул.%20Механическая%20101" target="_blank" rel="noopener"><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><b>Челябинск</b><span>ул. Механическая 101</span></span></a></li>
+            <li><a href="https://yandex.ru/maps/?text=Екатеринбург%20пер.%20Буторина%206а" target="_blank" rel="noopener"><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><b>Екатеринбург</b><span>пер. Буторина 6а</span></span></a></li>
+            <li><a href="https://yandex.ru/maps/?text=Тюмень%20ул.%2050%20лет%20Октября%2010" target="_blank" rel="noopener"><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><b>Тюмень</b><span>ул. 50 лет Октября, дом 10</span></span></a></li>
+            <li><a href="https://yandex.ru/maps/?text=Пермь%20ул.%20Норильская%206а" target="_blank" rel="noopener"><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><b>Пермь</b><span>ул. Норильская, 6а</span></span></a></li>
+            <li><a href="https://yandex.ru/maps/?text=Нижний%20Новгород%20Овражная%20улица%2054" target="_blank" rel="noopener"><span class="pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span><b>Нижний Новгород</b><span>Овражная улица, 54</span></span></a></li>
+          </ul>
+        </div>
+        <div class="contacts-r">
+          <h3 style="font-size:clamp(21px,2.4vw,28px)">Оставьте свой номер телефона</h3>
+          <p style="color:var(--tx-2);margin-top:10px">И мы свяжемся в течении 5 минут</p>
+          <form class="form-row" data-form>
+            <input class="inp" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+            <input class="inp" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+            <input class="inp" type="text" name="car" placeholder="Марка и модель авто">
+            <button class="btn btn-fire btn-wide" type="submit">Узнать</button>
+          </form>
+          <div class="ok" data-ok>✅ Заявка отправлена. Перезвоним в течение 5 минут!</div>
+          <p class="consent">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div>
+      <a href="#top" class="logo logo-ftr" style="margin-bottom:14px"><img src="https://valerabkrv.github.io/vyhlopoff/img/logo-light.png" alt="ВЫХЛОПОFF PERFORMANCE" width="1538" height="172"></a>
+      <p class="copy">Прошивка, которая окупается бензином</p>
+    </div>
+    <nav class="ftr-nav">
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#faq">Вопросы</a>
+      <a href="tel:+79226969219">+7 (922) 696-92-19</a>
+      <a href="mailto:exhaustofff@yandex.ru">exhaustofff@yandex.ru</a>
+    </nav>
+    <p class="copy">© 2026 ВЫхлопоFF</p>
+  </div>
+</footer>
+
+<button class="up" id="up" aria-label="Вверх"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div class="bar" id="bar">
+  <a class="btn btn-ghost btn-sm" href="tel:+79226969219">Позвонить</a>
+  <button class="btn btn-fire btn-sm" data-modal>Записаться</button>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-bd" data-close></div>
+  <div class="modal-in">
+    <button class="modal-x" data-close aria-label="Закрыть">✕</button>
+    <span class="eyebrow">Заявка</span>
+    <h3 id="modalTitle">Записаться / Рассчитать стоимость</h3>
+    <p style="color:var(--tx-2);margin-top:10px;font-size:15px">Оставьте свой номер телефона — и мы свяжемся в течении 5 минут</p>
+    <form class="form-row" data-form>
+      <input class="inp" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+      <input class="inp" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+      <input class="inp" type="text" name="car" placeholder="Марка и модель авто">
+      <input type="hidden" name="service" id="modalService">
+      <button class="btn btn-fire btn-wide" type="submit">Отправить заявку</button>
+    </form>
+    <div class="ok" data-ok>✅ Заявка отправлена. Перезвоним в течение 5 минут!</div>
+    <p class="consent">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ROOT=document.querySelector('.vf')||document;
+  var $=function(s,c){return (c||ROOT).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||ROOT).querySelectorAll(s))};
+
+  /* header + sticky bar + up */
+  var hdr=$('#hdr'),bar=$('#bar'),up=$('#up');
+  function onScroll(){
+    var y=window.pageYOffset;
+    hdr.classList.toggle('stuck',y>20);
+    var show=y>window.innerHeight*0.7;
+    bar.classList.toggle('show',show);
+    up.classList.toggle('show',show);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  up.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  /* mobile menu */
+  var mob=$('#mob');
+  $('#burger').addEventListener('click',function(){mob.classList.add('open');document.body.style.overflow='hidden'});
+  function closeMob(){mob.classList.remove('open');document.body.style.overflow=''}
+  $('#mobX').addEventListener('click',closeMob);
+  $$('#mob a').forEach(function(a){a.addEventListener('click',closeMob)});
+
+  /* modal */
+  var modal=$('#modal');
+  function openModal(service){
+    $('#modalService').value=service||'';
+    $('#modalTitle').textContent=service?('Записаться: '+service):'Записаться / Рассчитать стоимость';
+    modal.classList.add('open');document.body.style.overflow='hidden';
+    setTimeout(function(){var i=$('input[name=phone]',modal);if(i)i.focus()},260);
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+  $$('[data-modal]').forEach(function(b){
+    b.addEventListener('click',function(){closeMob();openModal(b.getAttribute('data-service'))});
+  });
+  $$('[data-close]').forEach(function(b){b.addEventListener('click',closeModal)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeMob()}});
+
+  /* phone mask */
+  $$('input[type=tel]').forEach(function(inp){
+    inp.addEventListener('input',function(){
+      var d=inp.value.replace(/\D/g,'');
+      if(d[0]==='8')d='7'+d.slice(1);
+      if(d[0]!=='7')d='7'+d;
+      d=d.slice(0,11);
+      var o='+7';
+      if(d.length>1)o+=' ('+d.slice(1,4);
+      if(d.length>=5)o+=') '+d.slice(4,7);
+      if(d.length>=8)o+='-'+d.slice(7,9);
+      if(d.length>=10)o+='-'+d.slice(9,11);
+      inp.value=o;
+    });
+  });
+
+  /* forms — подключите сюда отправку в CRM / Telegram / Tilda Forms */
+  $$('[data-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var phone=f.querySelector('input[name=phone]');
+      if(phone.value.replace(/\D/g,'').length<11){phone.focus();phone.style.borderColor='#ff5252';return}
+      /* TODO: fetch('/your-endpoint',{method:'POST',body:new FormData(f)}) */
+      var ok=f.parentNode.querySelector('[data-ok]');
+      f.style.display='none';
+      if(ok)ok.classList.add('show');
+      if(window.ym)try{ym(0,'reachGoal','lead')}catch(err){}
+    });
+  });
+
+  /* calculator */
+  var r1=$('#r1'),r2=$('#r2'),r3=$('#r3'),r4=$('#r4');
+  var nf=new Intl.NumberFormat('ru-RU');
+  function calc(){
+    var l=+r1.value,km=+r2.value,p=+r3.value,pct=+r4.value;
+    $('#v1').textContent=l;$('#v2').textContent=nf.format(km);$('#v3').textContent=p;$('#v4').textContent=pct;
+    var litMonth=l*km/100;
+    var savedLitYear=litMonth*12*pct/100;
+    var savedMonth=litMonth*p*pct/100;
+    $('#oYear').textContent=nf.format(Math.round(savedMonth*12))+' ₽';
+    $('#oMonth').textContent=nf.format(Math.round(savedMonth))+' ₽';
+    $('#oLit').textContent=nf.format(Math.round(savedLitYear))+' л';
+  }
+  [r1,r2,r3,r4].forEach(function(r){r.addEventListener('input',calc)});
+  calc();
+
+  /* reveal — scroll-based, устойчиво к якорным переходам */
+  var rvs=$$('.rv');
+  function revealPass(){
+    var h=window.innerHeight,i,el,r;
+    for(i=rvs.length-1;i>=0;i--){
+      el=rvs[i];r=el.getBoundingClientRect();
+      if(r.top<h*0.92){
+        var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
+        el.style.transitionDelay=Math.min(sib,6)*70+'ms';
+        el.classList.add('in');rvs.splice(i,1);
+      }
+    }
+  }
+
+  /* counters */
+  var cnts=$$('[data-count]');
+  function countPass(){
+    var h=window.innerHeight,i,el,r;
+    for(i=cnts.length-1;i>=0;i--){
+      el=cnts[i];r=el.getBoundingClientRect();
+      if(r.top<h*0.9&&r.bottom>0){
+        (function(el){
+          var to=+el.getAttribute('data-count'),pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'';
+          var t0=null,dur=1400;
+          function tick(t){
+            if(!t0)t0=t;
+            var k=Math.min((t-t0)/dur,1),e2=1-Math.pow(1-k,3);
+            el.textContent=pre+Math.round(to*e2)+suf;
+            if(k<1)requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        })(el);
+        cnts.splice(i,1);
+      }
+    }
+  }
+
+  var ticking=false;
+  function raf(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){revealPass();countPass();ticking=false});
+  }
+  window.addEventListener('scroll',raf,{passive:true});
+  window.addEventListener('resize',raf);
+  window.addEventListener('load',raf);
+  revealPass();countPass();
+  setTimeout(raf,400);
+})();
+</script>
+</div>
