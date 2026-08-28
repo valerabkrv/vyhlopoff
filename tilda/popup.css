@@ -1,0 +1,113 @@
+/* ==========================================================
+   Поп-ап заявки — блок Тильды BF502N (#rec3395632401)
+   Стилизован под дизайн сайта. Всё содержимое настраивается
+   в Тильде: Контент (поля, тексты) и Настройки (приём заявок).
+   Если пересоздадите блок — поменяйте номер rec ниже.
+   ========================================================== */
+#rec3395632401 .t-popup{
+  background-color:rgba(4,5,7,.84) !important;
+  backdrop-filter:blur(8px);
+}
+#rec3395632401 .t-popup__container{
+  background:linear-gradient(180deg,#171c25 0%,#0d1015 100%) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:34px !important;
+  padding:clamp(26px,4vw,40px) !important;
+  max-width:520px !important;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.8) !important;
+}
+#rec3395632401 .t702__img{display:none !important}
+#rec3395632401 .t702__wrapper{padding:0 !important}
+
+#rec3395632401 .t702__title,
+#rec3395632401 .t702__title *{
+  font-family:'Unbounded',sans-serif !important;
+  font-weight:700 !important;
+  font-size:clamp(21px,2.4vw,27px) !important;
+  line-height:1.12 !important;
+  letter-spacing:-.02em !important;
+  color:#eef2f7 !important;
+}
+#rec3395632401 .t702__descr,
+#rec3395632401 .t702__descr *{
+  font-family:'Manrope',sans-serif !important;
+  color:#a3adbb !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+#rec3395632401 .t-input-title,
+#rec3395632401 .t-input-title *{
+  font-family:'Manrope',sans-serif !important;
+  color:#a3adbb !important;
+  font-size:13.5px !important;
+  font-weight:700 !important;
+}
+#rec3395632401 .t-input{
+  background:rgba(255,255,255,.05) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:15px !important;
+  height:56px !important;
+  color:#eef2f7 !important;
+  font-family:'Manrope',sans-serif !important;
+  font-size:16px !important;
+  padding:0 18px !important;
+  box-shadow:none !important;
+  transition:border-color .25s,background .25s !important;
+}
+#rec3395632401 .t-input:focus{
+  border-color:#ffb020 !important;
+  background:rgba(255,255,255,.08) !important;
+}
+#rec3395632401 .t-input::placeholder{color:#6e7889 !important}
+#rec3395632401 .t-input-phonemask__select{
+  background:transparent !important;
+  border:0 !important;
+  color:#eef2f7 !important;
+}
+#rec3395632401 .t-input-phonemask__select-code{color:#eef2f7 !important}
+
+#rec3395632401 .t-submit{
+  background:linear-gradient(135deg,#ff6a00 0%,#ffb020 100%) !important;
+  color:#12080a !important;
+  border:0 !important;
+  border-radius:999px !important;
+  height:58px !important;
+  font-family:'Manrope',sans-serif !important;
+  font-weight:800 !important;
+  font-size:15.5px !important;
+  letter-spacing:.01em !important;
+  box-shadow:0 14px 44px -12px rgba(255,106,0,.55) !important;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s !important;
+}
+#rec3395632401 .t-submit:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 22px 54px -12px rgba(255,140,0,.7) !important;
+}
+#rec3395632401 .t-btnflex__text{color:#12080a !important;font-weight:800 !important}
+
+#rec3395632401 .t-input-subtitle,
+#rec3395632401 .t-input-subtitle *{
+  font-family:'Manrope',sans-serif !important;
+  color:#6e7889 !important;
+  font-size:12.5px !important;
+  line-height:1.5 !important;
+}
+#rec3395632401 .t-form__successbox{
+  font-family:'Manrope',sans-serif !important;
+  color:#25e08b !important;
+  background:rgba(37,224,139,.1) !important;
+  border:1px solid rgba(37,224,139,.35) !important;
+  border-radius:18px !important;
+  padding:18px !important;
+  font-weight:700 !important;
+}
+#rec3395632401 .t-form__errorbox-wrapper,
+#rec3395632401 .t-form__errorbox-item{
+  font-family:'Manrope',sans-serif !important;
+  color:#ff8a80 !important;
+  background:rgba(255,82,82,.1) !important;
+  border-radius:14px !important;
+}
+#rec3395632401 .t-popup__close-icon path,
+#rec3395632401 .t-popup__close svg path{fill:#eef2f7 !important}

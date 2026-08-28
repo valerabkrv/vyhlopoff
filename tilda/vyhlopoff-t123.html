@@ -1,8 +1,7 @@
-<!-- ВЫХЛОПОFF Performance | код для блока T123 (HTML-код) в Tilda
-     Картинки и видео лежат тут: https://valerabkrv.github.io/vyhlopoff/img/
-     Чтобы перенести их в Tilda: загрузите файлы из папки img/ в
-     Настройки сайта -> Файлы и замените в коде все вхождения
-     https://valerabkrv.github.io/vyhlopoff/img/ на адрес, который выдаст Tilda. -->
+<!-- Код для блока T123 (HTML-код) в Tilda.
+     Картинки и видео: https://valerabkrv.github.io/vyhlopoff/img/
+     Чтобы держать их в Тильде: Настройки сайта -> Файлы,
+     затем заменить этот адрес на выданный Тильдой. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -342,6 +341,122 @@ body{font-size:16px}
 }
 
 </style>
+<style>
+/* стили блоков Тильды — без области видимости */
+/* ==========================================================
+   Поп-ап заявки — блок Тильды BF502N (#rec3395632401)
+   Стилизован под дизайн сайта. Всё содержимое настраивается
+   в Тильде: Контент (поля, тексты) и Настройки (приём заявок).
+   Если пересоздадите блок — поменяйте номер rec ниже.
+   ========================================================== */
+#rec3395632401 .t-popup{
+  background-color:rgba(4,5,7,.84) !important;
+  backdrop-filter:blur(8px);
+}
+#rec3395632401 .t-popup__container{
+  background:linear-gradient(180deg,#171c25 0%,#0d1015 100%) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:34px !important;
+  padding:clamp(26px,4vw,40px) !important;
+  max-width:520px !important;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.8) !important;
+}
+#rec3395632401 .t702__img{display:none !important}
+#rec3395632401 .t702__wrapper{padding:0 !important}
+
+#rec3395632401 .t702__title,
+#rec3395632401 .t702__title *{
+  font-family:'Unbounded',sans-serif !important;
+  font-weight:700 !important;
+  font-size:clamp(21px,2.4vw,27px) !important;
+  line-height:1.12 !important;
+  letter-spacing:-.02em !important;
+  color:#eef2f7 !important;
+}
+#rec3395632401 .t702__descr,
+#rec3395632401 .t702__descr *{
+  font-family:'Manrope',sans-serif !important;
+  color:#a3adbb !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+#rec3395632401 .t-input-title,
+#rec3395632401 .t-input-title *{
+  font-family:'Manrope',sans-serif !important;
+  color:#a3adbb !important;
+  font-size:13.5px !important;
+  font-weight:700 !important;
+}
+#rec3395632401 .t-input{
+  background:rgba(255,255,255,.05) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:15px !important;
+  height:56px !important;
+  color:#eef2f7 !important;
+  font-family:'Manrope',sans-serif !important;
+  font-size:16px !important;
+  padding:0 18px !important;
+  box-shadow:none !important;
+  transition:border-color .25s,background .25s !important;
+}
+#rec3395632401 .t-input:focus{
+  border-color:#ffb020 !important;
+  background:rgba(255,255,255,.08) !important;
+}
+#rec3395632401 .t-input::placeholder{color:#6e7889 !important}
+#rec3395632401 .t-input-phonemask__select{
+  background:transparent !important;
+  border:0 !important;
+  color:#eef2f7 !important;
+}
+#rec3395632401 .t-input-phonemask__select-code{color:#eef2f7 !important}
+
+#rec3395632401 .t-submit{
+  background:linear-gradient(135deg,#ff6a00 0%,#ffb020 100%) !important;
+  color:#12080a !important;
+  border:0 !important;
+  border-radius:999px !important;
+  height:58px !important;
+  font-family:'Manrope',sans-serif !important;
+  font-weight:800 !important;
+  font-size:15.5px !important;
+  letter-spacing:.01em !important;
+  box-shadow:0 14px 44px -12px rgba(255,106,0,.55) !important;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s !important;
+}
+#rec3395632401 .t-submit:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 22px 54px -12px rgba(255,140,0,.7) !important;
+}
+#rec3395632401 .t-btnflex__text{color:#12080a !important;font-weight:800 !important}
+
+#rec3395632401 .t-input-subtitle,
+#rec3395632401 .t-input-subtitle *{
+  font-family:'Manrope',sans-serif !important;
+  color:#6e7889 !important;
+  font-size:12.5px !important;
+  line-height:1.5 !important;
+}
+#rec3395632401 .t-form__successbox{
+  font-family:'Manrope',sans-serif !important;
+  color:#25e08b !important;
+  background:rgba(37,224,139,.1) !important;
+  border:1px solid rgba(37,224,139,.35) !important;
+  border-radius:18px !important;
+  padding:18px !important;
+  font-weight:700 !important;
+}
+#rec3395632401 .t-form__errorbox-wrapper,
+#rec3395632401 .t-form__errorbox-item{
+  font-family:'Manrope',sans-serif !important;
+  color:#ff8a80 !important;
+  background:rgba(255,82,82,.1) !important;
+  border-radius:14px !important;
+}
+#rec3395632401 .t-popup__close-icon path,
+#rec3395632401 .t-popup__close svg path{fill:#eef2f7 !important}
+</style>
 <div class="vf">
 <!-- ================= HEADER ================= -->
 <header class="hdr" id="hdr">
@@ -359,7 +474,7 @@ body{font-size:16px}
     </nav>
     <div class="hdr-cta">
       <a class="hdr-tel" href="tel:+79226969219">+7 (922) 696-92-19<small>Ответим за 5 минут</small></a>
-      <button class="btn btn-fire btn-sm" data-modal>Записаться</button>
+      <a class="btn btn-fire btn-sm" href="#popup:zayavka">Записаться</a>
     </div>
     <button class="burger" id="burger" aria-label="Меню"><span></span></button>
   </div>
@@ -397,7 +512,7 @@ body{font-size:16px}
       <p class="hero-sub">Профессиональная прошивка ЭБУ для снижения расхода топлива на легковых бензиновых автомобилях. Услуга, которая окупается бензином.</p>
       <p class="hero-note">Где бензин: актуальные цены на топливо и поиск ближайших АЗС</p>
       <div class="hero-btns">
-        <button class="btn btn-fire" data-modal>Записаться / Рассчитать стоимость</button>
+        <a class="btn btn-fire" href="#popup:zayavka">Записаться / Рассчитать стоимость</a>
         <a class="btn btn-ghost" href="#calc">Посчитать экономию</a>
         <span class="hero-tel"><span>Телефон для записи</span><a href="tel:+79226969219">+7 (922) 696-92-19</a></span>
       </div>
@@ -429,7 +544,7 @@ body{font-size:16px}
           <h2>Надоело искать где бензин? Устали стоять в очередях на АЗС чтобы заправить авто.</h2>
           <p class="lead" style="margin-top:18px">Мы делаем ЗАПРАВКУ бензином реже. Специализируемся только на экономичных прошивках бензиновых двигателей. Не гонимся за мощностью — оптимизируем каждый миллилитр топлива без вреда для мотора.</p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
-            <button class="btn btn-fire" data-modal>Узнать как</button>
+            <a class="btn btn-fire" href="#popup:zayavka">Узнать как</a>
             <a class="btn btn-ghost" href="#services">Наши дополнительные услуги</a>
           </div>
         </div>
@@ -451,7 +566,7 @@ body{font-size:16px}
       <h2>Наши <span class="gr">дополнительные услуги</span></h2>
       <p class="lead" style="margin-top:16px">Всё, что влияет на расход и здоровье мотора — в одном сервисе. Диагностика, ремонт и обслуживание топливной системы.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px">
-        <button class="btn btn-fire" data-modal>Записаться на сервис</button>
+        <a class="btn btn-fire" href="#popup:zayavka">Записаться на сервис</a>
         <a class="btn btn-ghost" href="#about">Главная услуга — прошивка ЭБУ</a>
       </div>
     </div>
@@ -467,7 +582,7 @@ body{font-size:16px}
             <li><i>✅</i>Устранение провалов и перерасхода</li>
           </ul>
           <p class="srv-note">💨 Машина снова поедет!</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Ремонт и промывка форсунок">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -481,7 +596,7 @@ body{font-size:16px}
             <li><i>✅</i>Вернём мощность и ровный холостой ход</li>
           </ul>
           <p class="srv-note">⚡ Быстро. Честно. С гарантией</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Ремонт топливной аппаратуры">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -495,7 +610,7 @@ body{font-size:16px}
             <li><i>✅</i>Ниже расход, лучше динамика</li>
           </ul>
           <p class="srv-note">⚡ Быстро, с правильным моментом затяжки</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена свечей с проверкой зазора">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -508,7 +623,7 @@ body{font-size:16px}
             <li><i>✅</i>Вернём отзывчивость педали газа</li>
           </ul>
           <p class="srv-note">⚡ Быстро, с адаптацией после чистки</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Чистка дроссельной заслонки">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -521,7 +636,7 @@ body{font-size:16px}
             <li><i>✅</i>Уберём ошибки Check Engine и вернём тягу</li>
           </ul>
           <p class="srv-note">⚡ Быстро, с гарантией</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена катализатора">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -534,7 +649,7 @@ body{font-size:16px}
             <li><i>✅</i>Масло + фильтр + работа</li>
           </ul>
           <p class="srv-note">⚡ Сбросим сервисный интервал</p>
-          <button class="btn btn-fire btn-sm btn-wide" data-modal data-service="Замена масла">записаться</button>
+          <a class="btn btn-fire btn-sm btn-wide" href="#popup:zayavka">записаться</a>
         </div>
       </article>
 
@@ -576,7 +691,7 @@ body{font-size:16px}
           <div><b id="oMonth">0 ₽</b><span>В МЕСЯЦ</span></div>
           <div><b id="oLit">0 л</b><span>БЕНЗИНА В ГОД</span></div>
         </div>
-        <button class="btn btn-fire btn-wide" data-modal>Записаться / Рассчитать стоимость</button>
+        <a class="btn btn-fire btn-wide" href="#popup:zayavka">Записаться / Рассчитать стоимость</a>
         <p class="disclaimer">Расчёт ориентировочный. Снижение расхода на 15–40% — это результат оптимизации топливовоздушной смеси и углов опережения зажигания. Экономия напрямую зависит от манеры вождения и состояния технической части автомобиля.</p>
       </div>
     </div>
@@ -598,7 +713,7 @@ body{font-size:16px}
           <span class="chip">1–2 часа</span>
           <span class="chip">Смешанный цикл</span>
         </div>
-        <button class="btn btn-fire" data-modal>Записаться / Рассчитать стоимость</button>
+        <a class="btn btn-fire" href="#popup:zayavka">Записаться / Рассчитать стоимость</a>
       </div>
       <div class="media rv">
         <img src="https://valerabkrv.github.io/vyhlopoff/img/drossel.jpg" alt="Дроссельный узел бензинового двигателя крупным планом" loading="lazy">
@@ -642,7 +757,7 @@ body{font-size:16px}
         <p>Работа выполняется бережно через стандартный разъем OBD2, без физического вмешательства в электронные блоки управления.</p>
       </article>
     </div>
-    <div style="margin-top:34px" class="rv"><button class="btn btn-ghost" data-modal>Узнать подробнее</button></div>
+    <div style="margin-top:34px" class="rv"><a class="btn btn-ghost" href="#popup:zayavka">Узнать подробнее</a></div>
   </div>
 </section>
 
@@ -660,7 +775,7 @@ body{font-size:16px}
       <article class="step rv"><div class="step-n">ШАГ 03<i></i></div><h3>Адаптация калибровок под экономию</h3><p>Корректируем параметры работы двигателя для оптимизации процессов сгорания топлива, добиваясь снижения расхода на 15 - 40%.</p></article>
       <article class="step rv"><div class="step-n">ШАГ 04<i></i></div><h3>Прошивка и тест-драйв</h3><p>Записываем калибровку через разъём OBD2 и проверяем результат на дороге — отклик педали, ровный холостой ход и новый расход.</p></article>
     </div>
-    <div style="margin-top:34px" class="rv"><button class="btn btn-fire" data-modal>записаться</button></div>
+    <div style="margin-top:34px" class="rv"><a class="btn btn-fire" href="#popup:zayavka">записаться</a></div>
   </div>
 </section>
 
@@ -703,14 +818,10 @@ body{font-size:16px}
         <div class="contacts-r">
           <h3 style="font-size:clamp(21px,2.4vw,28px)">Оставьте свой номер телефона</h3>
           <p style="color:var(--tx-2);margin-top:10px">И мы свяжемся в течении 5 минут</p>
-          <form class="form-row" data-form>
-            <input class="inp" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
-            <input class="inp" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-            <input class="inp" type="text" name="car" placeholder="Марка и модель авто">
-            <button class="btn btn-fire btn-wide" type="submit">Узнать</button>
-          </form>
-          <div class="ok" data-ok>✅ Заявка отправлена. Перезвоним в течение 5 минут!</div>
-          <p class="consent">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
+          <div class="form-row">
+            <a class="btn btn-fire btn-wide" href="#popup:zayavka">Оставить заявку</a>
+          </div>
+          <p class="consent">Перезвоним в течение 5 минут, подберём прошивку и назовём цену для вашей модели</p>
         </div>
       </div>
     </div>
@@ -739,28 +850,11 @@ body{font-size:16px}
 
 <div class="bar" id="bar">
   <a class="btn btn-ghost btn-sm" href="tel:+79226969219">Позвонить</a>
-  <button class="btn btn-fire btn-sm" data-modal>Записаться</button>
+  <a class="btn btn-fire btn-sm" href="#popup:zayavka">Записаться</a>
 </div>
 
 <!-- ================= MODAL ================= -->
-<div class="modal" id="modal">
-  <div class="modal-bd" data-close></div>
-  <div class="modal-in">
-    <button class="modal-x" data-close aria-label="Закрыть">✕</button>
-    <span class="eyebrow">Заявка</span>
-    <h3 id="modalTitle">Записаться / Рассчитать стоимость</h3>
-    <p style="color:var(--tx-2);margin-top:10px;font-size:15px">Оставьте свой номер телефона — и мы свяжемся в течении 5 минут</p>
-    <form class="form-row" data-form>
-      <input class="inp" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
-      <input class="inp" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-      <input class="inp" type="text" name="car" placeholder="Марка и модель авто">
-      <input type="hidden" name="service" id="modalService">
-      <button class="btn btn-fire btn-wide" type="submit">Отправить заявку</button>
-    </form>
-    <div class="ok" data-ok>✅ Заявка отправлена. Перезвоним в течение 5 минут!</div>
-    <p class="consent">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
-  </div>
-</div>
+
 
 <script>
 (function(){
@@ -790,12 +884,13 @@ body{font-size:16px}
   /* modal */
   var modal=$('#modal');
   function openModal(service){
+    if(!modal)return;
     $('#modalService').value=service||'';
     $('#modalTitle').textContent=service?('Записаться: '+service):'Записаться / Рассчитать стоимость';
     modal.classList.add('open');document.body.style.overflow='hidden';
     setTimeout(function(){var i=$('input[name=phone]',modal);if(i)i.focus()},260);
   }
-  function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+  function closeModal(){if(!modal)return;modal.classList.remove('open');document.body.style.overflow=''}
   $$('[data-modal]').forEach(function(b){
     b.addEventListener('click',function(){closeMob();openModal(b.getAttribute('data-service'))});
   });
