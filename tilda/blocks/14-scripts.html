@@ -1,0 +1,137 @@
+<!-- Скрипты сайта ВЫХЛОПОFF: калькулятор, меню, появление секций.
+     Этот блок должен быть ПОСЛЕДНИМ на странице. -->
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* header + sticky bar + up */
+  var hdr=$('#hdr'),bar=$('#bar'),up=$('#up');
+  function onScroll(){
+    var y=window.pageYOffset;
+    hdr.classList.toggle('stuck',y>20);
+    var show=y>window.innerHeight*0.7;
+    bar.classList.toggle('show',show);
+    up.classList.toggle('show',show);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  up.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  /* mobile menu */
+  var mob=$('#mob');
+  $('#burger').addEventListener('click',function(){mob.classList.add('open');document.body.style.overflow='hidden'});
+  function closeMob(){mob.classList.remove('open');document.body.style.overflow=''}
+  $('#mobX').addEventListener('click',closeMob);
+  $$('#mob a').forEach(function(a){a.addEventListener('click',closeMob)});
+
+  /* modal */
+  var modal=$('#modal');
+  function openModal(service){
+    if(!modal)return;
+    $('#modalService').value=service||'';
+    $('#modalTitle').textContent=service?('Записаться: '+service):'Записаться / Рассчитать стоимость';
+    modal.classList.add('open');document.body.style.overflow='hidden';
+    setTimeout(function(){var i=$('input[name=phone]',modal);if(i)i.focus()},260);
+  }
+  function closeModal(){if(!modal)return;modal.classList.remove('open');document.body.style.overflow=''}
+  $$('[data-modal]').forEach(function(b){
+    b.addEventListener('click',function(){closeMob();openModal(b.getAttribute('data-service'))});
+  });
+  $$('[data-close]').forEach(function(b){b.addEventListener('click',closeModal)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeMob()}});
+
+  /* phone mask */
+  $$('input[type=tel]').forEach(function(inp){
+    inp.addEventListener('input',function(){
+      var d=inp.value.replace(/\D/g,'');
+      if(d[0]==='8')d='7'+d.slice(1);
+      if(d[0]!=='7')d='7'+d;
+      d=d.slice(0,11);
+      var o='+7';
+      if(d.length>1)o+=' ('+d.slice(1,4);
+      if(d.length>=5)o+=') '+d.slice(4,7);
+      if(d.length>=8)o+='-'+d.slice(7,9);
+      if(d.length>=10)o+='-'+d.slice(9,11);
+      inp.value=o;
+    });
+  });
+
+  /* forms — подключите сюда отправку в CRM / Telegram / Tilda Forms */
+  $$('[data-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var phone=f.querySelector('input[name=phone]');
+      if(phone.value.replace(/\D/g,'').length<11){phone.focus();phone.style.borderColor='#ff5252';return}
+      /* TODO: fetch('/your-endpoint',{method:'POST',body:new FormData(f)}) */
+      var ok=f.parentNode.querySelector('[data-ok]');
+      f.style.display='none';
+      if(ok)ok.classList.add('show');
+      if(window.ym)try{ym(0,'reachGoal','lead')}catch(err){}
+    });
+  });
+
+  /* calculator */
+  var r1=$('#r1'),r2=$('#r2'),r3=$('#r3'),r4=$('#r4');
+  var nf=new Intl.NumberFormat('ru-RU');
+  function calc(){
+    var l=+r1.value,km=+r2.value,p=+r3.value,pct=+r4.value;
+    $('#v1').textContent=l;$('#v2').textContent=nf.format(km);$('#v3').textContent=p;$('#v4').textContent=pct;
+    var litMonth=l*km/100;
+    var savedLitYear=litMonth*12*pct/100;
+    var savedMonth=litMonth*p*pct/100;
+    $('#oYear').textContent=nf.format(Math.round(savedMonth*12))+' ₽';
+    $('#oMonth').textContent=nf.format(Math.round(savedMonth))+' ₽';
+    $('#oLit').textContent=nf.format(Math.round(savedLitYear))+' л';
+  }
+  [r1,r2,r3,r4].forEach(function(r){r.addEventListener('input',calc)});
+  calc();
+
+  /* reveal — scroll-based, устойчиво к якорным переходам */
+  var rvs=$$('.rv');
+  function revealPass(){
+    var h=window.innerHeight,i,el,r;
+    for(i=rvs.length-1;i>=0;i--){
+      el=rvs[i];r=el.getBoundingClientRect();
+      if(r.top<h*0.92){
+        var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
+        el.style.transitionDelay=Math.min(sib,6)*70+'ms';
+        el.classList.add('in');rvs.splice(i,1);
+      }
+    }
+  }
+
+  /* counters */
+  var cnts=$$('[data-count]');
+  function countPass(){
+    var h=window.innerHeight,i,el,r;
+    for(i=cnts.length-1;i>=0;i--){
+      el=cnts[i];r=el.getBoundingClientRect();
+      if(r.top<h*0.9&&r.bottom>0){
+        (function(el){
+          var to=+el.getAttribute('data-count'),pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'';
+          var t0=null,dur=1400;
+          function tick(t){
+            if(!t0)t0=t;
+            var k=Math.min((t-t0)/dur,1),e2=1-Math.pow(1-k,3);
+            el.textContent=pre+Math.round(to*e2)+suf;
+            if(k<1)requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        })(el);
+        cnts.splice(i,1);
+      }
+    }
+  }
+
+  var ticking=false;
+  function raf(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){revealPass();countPass();ticking=false});
+  }
+  window.addEventListener('scroll',raf,{passive:true});
+  window.addEventListener('resize',raf);
+  window.addEventListener('load',raf);
+  revealPass();countPass();
+  setTimeout(raf,400);
+})();
+</script>

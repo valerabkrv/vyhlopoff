@@ -1,0 +1,42 @@
+<!-- Калькулятор экономии | блок сайта ВЫХЛОПОFF. Порядок блоков менять можно, но «Стили» должны идти первыми, «Скрипты» — последними. -->
+<div class="vf">
+<section class="sec" id="calc">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(30px,4vw,52px)" class="rv">
+      <span class="eyebrow">Калькулятор</span>
+      <h2>Сколько бензина вы сожжёте <span class="gr">зря</span> за год</h2>
+      <p class="lead" style="margin:16px auto 0">Подвиньте ползунки под свой автомобиль — и увидите, сколько денег остаётся в баке после прошивки.</p>
+    </div>
+    <div class="calc rv">
+      <div class="card">
+        <div class="field">
+          <label>Расход сейчас, л / 100 км <b><span id="v1">11</span> л</b></label>
+          <input type="range" id="r1" min="5" max="25" step="0.5" value="11">
+        </div>
+        <div class="field">
+          <label>Пробег в месяц, км <b><span id="v2">1500</span> км</b></label>
+          <input type="range" id="r2" min="200" max="6000" step="100" value="1500">
+        </div>
+        <div class="field">
+          <label>Цена литра, ₽ <b><span id="v3">62</span> ₽</b></label>
+          <input type="range" id="r3" min="40" max="110" step="1" value="62">
+        </div>
+        <div class="field">
+          <label>Ожидаемая экономия после прошивки <b><span id="v4">20</span> %</b></label>
+          <input type="range" id="r4" min="15" max="40" step="1" value="20">
+        </div>
+      </div>
+      <div class="card calc-out">
+        <span class="cap">Вы экономите за год</span>
+        <span class="big gr-eco" id="oYear">0 ₽</span>
+        <div class="calc-split">
+          <div><b id="oMonth">0 ₽</b><span>В МЕСЯЦ</span></div>
+          <div><b id="oLit">0 л</b><span>БЕНЗИНА В ГОД</span></div>
+        </div>
+        <a class="btn btn-fire btn-wide" href="#popup:zayavka">Записаться / Рассчитать стоимость</a>
+        <p class="disclaimer">Расчёт ориентировочный. Снижение расхода на 15–40% — это результат оптимизации топливовоздушной смеси и углов опережения зажигания. Экономия напрямую зависит от манеры вождения и состояния технической части автомобиля.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
