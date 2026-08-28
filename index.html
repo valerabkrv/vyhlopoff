@@ -804,14 +804,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
         <div class="contacts-r">
           <h3 style="font-size:clamp(21px,2.4vw,28px)">Оставьте свой номер телефона</h3>
           <p style="color:var(--tx-2);margin-top:10px">И мы свяжемся в течении 5 минут</p>
-          <form class="form-row" data-form>
-            <input class="inp" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
-            <input class="inp" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-            <input class="inp" type="text" name="car" placeholder="Марка и модель авто">
-            <button class="btn btn-fire btn-wide" type="submit">Узнать</button>
-          </form>
-          <div class="ok" data-ok>✅ Заявка отправлена. Перезвоним в течение 5 минут!</div>
-          <p class="consent">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
+          <div class="form-row">
+            <button class="btn btn-fire btn-wide" data-modal>Оставить заявку</button>
+          </div>
+          <p class="consent">Перезвоним в течение 5 минут, подберём прошивку и назовём цену для вашей модели</p>
         </div>
       </div>
     </div>
@@ -890,12 +886,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:0;border-radiu
   /* modal */
   var modal=$('#modal');
   function openModal(service){
+    if(!modal)return;
     $('#modalService').value=service||'';
     $('#modalTitle').textContent=service?('Записаться: '+service):'Записаться / Рассчитать стоимость';
     modal.classList.add('open');document.body.style.overflow='hidden';
     setTimeout(function(){var i=$('input[name=phone]',modal);if(i)i.focus()},260);
   }
-  function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+  function closeModal(){if(!modal)return;modal.classList.remove('open');document.body.style.overflow=''}
   $$('[data-modal]').forEach(function(b){
     b.addEventListener('click',function(){closeMob();openModal(b.getAttribute('data-service'))});
   });
